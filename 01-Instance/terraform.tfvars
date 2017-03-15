@@ -7,3 +7,27 @@ instance_name = "Abduls-instance"
 
 key_name = "Abdulkey"
 public_key_path = "~/.ssh/id_rsa.pub"
+
+# Subnet Availability zones
+subnetaz1 = {
+  us-east-1 = "us-east-1a"
+  us-east-2 = "us-east-2a"
+  us-west-2 = "us-west-2a"
+  eu-west-1 = "eu-west-1a"
+}
+
+subnetaz2 = {
+  us-east-1 = "us-east-1c"
+  us-east-2 = "us-east-2b"
+  us-west-2 = "us-west-2b"
+  eu-west-1 = "eu-west-1b"
+
+}
+
+subnetaz3 = {
+  us-east-1 = "us-east-1d"
+  us-east-2 = "us-east-2c"
+  us-west-2 = "us-west-2c"
+  eu-west-1 = "eu-west-1c"
+
+}

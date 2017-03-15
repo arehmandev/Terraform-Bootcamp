@@ -2,11 +2,10 @@ resource "aws_subnet" "public1" {
   vpc_id                  = "${aws_vpc.vpc.id}"
   cidr_block              = "${var.public1_cidr}"
   map_public_ip_on_launch = true
-  availability_zone       = "${lookup(var.subnetaz1, var.awsregion)}"
+  availability_zone       = "${lookup(var.subnetaz1, var.region)}"
 
   tags {
-    Name              = "Terrakube public subnet ${lookup(var.subnetaz1, var.awsregion)}"
-    KubernetesCluster = "${ var.name }"
+    Name = "${var.vpcname}"
   }
 }
 
@@ -14,7 +13,7 @@ resource "aws_subnet" "public2" {
   vpc_id                  = "${aws_vpc.vpc.id}"
   cidr_block              = "${var.public2_cidr}"
   map_public_ip_on_launch = true
-  availability_zone       = "${lookup(var.subnetaz2, var.awsregion)}"
+  availability_zone       = "${lookup(var.subnetaz2, var.region)}"
 
   tags {
     Name = "${var.vpcname}"
@@ -25,7 +24,7 @@ resource "aws_subnet" "public3" {
   vpc_id                  = "${aws_vpc.vpc.id}"
   cidr_block              = "${var.public3_cidr}"
   map_public_ip_on_launch = true
-  availability_zone       = "${lookup(var.subnetaz3, var.awsregion)}"
+  availability_zone       = "${lookup(var.subnetaz3, var.region)}"
 
   tags {
     Name = "${var.vpcname}"
@@ -37,7 +36,7 @@ resource "aws_subnet" "public3" {
 resource "aws_subnet" "private1" {
   vpc_id            = "${aws_vpc.vpc.id}"
   cidr_block        = "${var.private1_cidr}"
-  availability_zone = "${lookup(var.subnetaz1, var.awsregion)}"
+  availability_zone = "${lookup(var.subnetaz1, var.region)}"
 
   tags = {
     Name = "${var.vpcname}"
@@ -47,7 +46,7 @@ resource "aws_subnet" "private1" {
 resource "aws_subnet" "private2" {
   vpc_id            = "${aws_vpc.vpc.id}"
   cidr_block        = "${var.private2_cidr}"
-  availability_zone = "${lookup(var.subnetaz2, var.awsregion)}"
+  availability_zone = "${lookup(var.subnetaz2, var.region)}"
 
   tags = {
     Name = "${var.vpcname}"
@@ -57,7 +56,7 @@ resource "aws_subnet" "private2" {
 resource "aws_subnet" "private3" {
   vpc_id            = "${aws_vpc.vpc.id}"
   cidr_block        = "${var.private3_cidr}"
-  availability_zone = "${lookup(var.subnetaz3, var.awsregion)}"
+  availability_zone = "${lookup(var.subnetaz3, var.region)}"
 
   tags = {
     Name = "${var.vpcname}"

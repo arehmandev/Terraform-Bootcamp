@@ -2,6 +2,10 @@ data "template_file" "node" {
   template = "${file("${path.module}/Userdata/userdata.sh")}"
 }
 
+data "template_file" "node2" {
+  template = "${file("${path.module}/Userdata/userdata2.sh")}"
+}
+
 data "aws_ami" "amazon" {
   most_recent = true
 
