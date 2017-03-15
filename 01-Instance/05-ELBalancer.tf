@@ -14,9 +14,9 @@ resource "aws_elb" "master" {
   }
 
   listener {
-    instance_port     = 443
+    instance_port     = 80
     instance_protocol = "tcp"
-    lb_port           = 443
+    lb_port           = 80
     lb_protocol       = "tcp"
   }
 
