@@ -33,9 +33,9 @@ resource "aws_security_group" "node" {
 
   ### Egress rule - allow all traffic out
   egress {
-    from_port       = 0
-    to_port         = 0
-    protocol        = "-1"           # For all protocols
-    cidr_blocks     = ["0.0.0.0/0"]
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"          # For all protocols
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }
