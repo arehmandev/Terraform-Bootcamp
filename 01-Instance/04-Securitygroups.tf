@@ -37,6 +37,5 @@ resource "aws_security_group" "node" {
     to_port         = 0
     protocol        = "-1"           # For all protocols
     cidr_blocks     = ["0.0.0.0/0"]
-    prefix_list_ids = ["pl12c4e678"]
   }
 }
