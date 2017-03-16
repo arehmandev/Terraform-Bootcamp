@@ -1,5 +1,5 @@
 resource "aws_security_group" "node" {
-  name        = "allow_all"
+  name        = "${var.security_group_name}"
   description = "Allow all inbound traffic"
 
   ingress {

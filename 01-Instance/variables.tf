@@ -25,3 +25,5 @@ variable "subnetaz2" {
 variable "subnetaz3" {
   type = "map"
 }
+
+variable "security_group_name" {}
