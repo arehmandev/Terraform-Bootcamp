@@ -16,6 +16,7 @@ subnetaz1 = {
   eu-west-1 = "eu-west-1a"
 }
 
+/**
 subnetaz2 = {
   us-east-1 = "us-east-1c"
   us-east-2 = "us-east-2b"
@@ -23,6 +24,7 @@ subnetaz2 = {
   eu-west-1 = "eu-west-1b"
 
 }
+**/
 
 subnetaz3 = {
   us-east-1 = "us-east-1d"
