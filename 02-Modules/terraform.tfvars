@@ -9,7 +9,6 @@ instance_count = "1"
 instance_name = "Abduls-instance"
 
 key_name = "Abdulkey"
-public_key_path = "~/.ssh/id_rsa.pub"
 
 # 2 Private CIDRs
 private1_cidr = "10.0.0.0/24"

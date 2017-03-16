@@ -20,7 +20,7 @@ module "instances" {
   instance_name   = "${var.instance_name}"
   security_groups = "${module.security.secgroupname}"
   key_name        = "${var.key_name}"
-  public_key_path = "${var.public_key_path}"
+  public_key_path = "${path.cwd}/Keys/demokey.pub"
   subnetaz1       = "${var.subnetaz1}"
   subnetaz2       = "${var.subnetaz2}"
   subnetaz3       = "${var.subnetaz3}"

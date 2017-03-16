@@ -13,8 +13,6 @@ variable "instance_name" {}
 
 variable "key_name" {}
 
-variable "public_key_path" {}
-
 # Subnet Availability zones
 variable "subnetaz1" {
   type = "map"
