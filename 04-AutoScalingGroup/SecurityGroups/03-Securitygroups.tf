@@ -1,6 +1,7 @@
 resource "aws_security_group" "node" {
   name        = "allow_all"
   description = "Allow all inbound traffic"
+  vpc_id      = "${var.vpcid}"
 
   ingress {
     from_port   = 443

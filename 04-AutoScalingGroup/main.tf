@@ -37,4 +37,16 @@ module "asg" {
 
 module "security" {
   source = "./SecurityGroups"
+  vpcid  = "${module.vpc.aws_vpc.id}"
+}
+
+module "elb" {
+  source          = "./ELB"
+  instance_name   = "${var.instance_name}"
+  subnets         = ["${module.vpc.aws_subnet.public1.id}", "${module.vpc.aws_subnet.public2.id}", "${module.vpc.aws_subnet.public3.id}"]
+  security_groups = "${module.security.secgroup}"
+  region          = "${var.region}"
+  subnetaz1       = "${var.subnetaz1}"
+  subnetaz2       = "${var.subnetaz2}"
+  subnetaz3       = "${var.subnetaz3}"
 }
