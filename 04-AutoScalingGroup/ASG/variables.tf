@@ -37,3 +37,5 @@ variable "health_check_grace_period" {
 variable "health_check_type" {
   default = "EC2"
 }
+
+variable "master_elb" {}

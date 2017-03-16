@@ -33,6 +33,7 @@ module "asg" {
   azs             = ["${lookup(var.subnetaz1, var.region)}", "${lookup(var.subnetaz2, var.region)}", "${lookup(var.subnetaz3, var.region)}"]
   subnet_azs      = ["${module.vpc.aws_subnet.public1.id}", "${module.vpc.aws_subnet.public2.id}", "${module.vpc.aws_subnet.public3.id}"]
   key_name        = "${var.key_name}"
+  master_elb      = "${module.elb.elb_name}"
 }
 
 module "security" {

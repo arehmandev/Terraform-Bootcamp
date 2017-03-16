@@ -11,9 +11,11 @@ variable "region" {}
 variable "subnetaz1" {
   type = "map"
 }
+
 variable "subnetaz2" {
   type = "map"
 }
+
 variable "subnetaz3" {
   type = "map"
 }

@@ -3,7 +3,6 @@ resource "aws_elb" "master" {
   subnets                   = ["${var.subnets}"]
   security_groups           = ["${var.security_groups}"]
   cross_zone_load_balancing = true
-  availability_zones        = ["${lookup(var.subnetaz1, var.region)}", "${lookup(var.subnetaz2, var.region)}", "${lookup(var.subnetaz3, var.region)}"]
 
   health_check {
     healthy_threshold   = 2

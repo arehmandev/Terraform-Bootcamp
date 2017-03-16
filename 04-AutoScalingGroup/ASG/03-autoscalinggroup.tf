@@ -12,17 +12,18 @@ resource "aws_autoscaling_group" "group1" {
   desired_capacity          = "${var.asg_number_of_instances}"
   health_check_grace_period = "${var.health_check_grace_period}"
   health_check_type         = "${var.health_check_type}"
+  load_balancers            = ["${var.master_elb}"]
 
   tag {
     key                 = "Name"
-    value               = "$[var.lc_name]"
+    value               = "${var.lc_name}"
     propagate_at_launch = true
   }
 }
 
 resource "aws_autoscaling_group" "group2" {
   depends_on = ["aws_launch_configuration.launch_config2"]
-  name       = "${var.lc_name}"
+  name       = "${var.lc_name}-2"
 
   availability_zones  = ["${var.azs}"]
   vpc_zone_identifier = ["${var.subnet_azs}"]
@@ -34,10 +35,11 @@ resource "aws_autoscaling_group" "group2" {
   desired_capacity          = "${var.asg_number_of_instances}"
   health_check_grace_period = "${var.health_check_grace_period}"
   health_check_type         = "${var.health_check_type}"
+  load_balancers            = ["${var.master_elb}"]
 
   tag {
     key                 = "Name"
-    value               = "$[var.lc_name]"
+    value               = "${var.lc_name}-2"
     propagate_at_launch = true
   }
 }
